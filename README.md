@@ -9,13 +9,13 @@ This soluton is a combination of:
 	- A copy of a Google Appsheet no-code application template
 
 The result is an app on your phone. When you add a new image to the app, it triggers a call to Google VisionAI with the types of AI you have selected:
-	- FACE_DETECTION
-	- IMAGE_PROPERTIES
-	- LANDMARK_DETECTION
-	- LOGO_DETECTION
-	- LABEL_DETECTION
-	- OBJECT_LOCALIZATION
-	- TEXT_DETECTION (OCR)
+- FACE_DETECTION
+- IMAGE_PROPERTIES
+- LANDMARK_DETECTION
+- LOGO_DETECTION
+- LABEL_DETECTION
+- OBJECT_LOCALIZATION
+- TEXT_DETECTION (OCR)
 
 #### Steps to Install
 
