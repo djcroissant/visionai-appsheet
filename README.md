@@ -30,8 +30,11 @@ The result is an app on your phone. When you add a new image to the app, it trig
 - open the google sheet called Inventory
 - add an apps script from the Tools menu
 - start copying these apps script (gs) files in this project
+	- e.g. it might look like [this](media/02.png)
 - change the constants in constants.gs
-	- you will need to dig up a few Drive ID's now that you have copied the Appsheet app
+	- now that you have copied the Appsheet app, you will need to dig up a few Drive ID's and insert them here.
 - save your work
 - add a trigger and set it to "main" and "on-change"
-- TEST by using the app
+	- e.g. it will look like [this](media/03.png)
+- when you save the trigger, you will need to verify various google oAuth scopes
+- now TEST by using the Appsheet app :)
