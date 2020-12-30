@@ -23,7 +23,7 @@ The result is an app on your phone. When you add a new image to the app, it trig
 - Generate an ApiKey from the previous step using the [GCP console](https://console.cloud.google.com/apis/credentials)
 	- e.g. it might look like [this](media/01.png)
 - Both of the above steps are documented as part of the Google Vision API [Quickstart](https://cloud.google.com/vision/docs/setup). This quickstart uses oAuth but we are using an api key
-- Copy [this appsheet template](https://www.appsheet.com/samples/Vision-AI-integration-via-Workspace-and-Appsheet?appGuidString=ea73c479-52e4-4af8-b2cb-3668f21ef67c)
+- Copy [this Appsheet template](https://www.appsheet.com/samples/Vision-AI-integration-via-Workspace-and-Appsheet?appGuidString=ea73c479-52e4-4af8-b2cb-3668f21ef67c)
 - for this app, [enable the Appsheet rest api](https://help.appsheet.com/en/articles/1979976-enabling-the-api)
 	- note the App ID
 	- note the Api Key
