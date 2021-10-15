@@ -23,14 +23,14 @@ The result is an app on your phone. When you add a new image to the app, it trig
 - Generate an ApiKey from the previous step using the [GCP console](https://console.cloud.google.com/apis/credentials)
 	- e.g. it might look like [this](media/01.png)
 - Both of the above steps are documented as part of the Google Vision API [Quickstart](https://cloud.google.com/vision/docs/setup). This quickstart uses oAuth but we are using an api key
-- Copy [this Appsheet template](https://www.appsheet.com/samples/Vision-AI-integration-via-Workspace-and-Appsheet?appGuidString=70ec046e-33c7-4398-8ec9-f9dbdc803db6)
+- Copy [this Appsheet template](https://www.appsheet.com/templates/Vision-AI-integration-via-Workspace-and-Appsheet?appGuidString=a875aeb8-b7f6-4ad7-a2ae-147afdf15a61)
 	- after the copy finished, there is a drive folder e.g. My Drive>Appsheet>Data>VisionAITemplate-something
 - for this app, [enable the Appsheet rest api](https://help.appsheet.com/en/articles/1979976-enabling-the-api)
 	- note the App ID
 	- note the Api Key
 - open the Google sheet called Inventory
 - add an apps script from the Tools menu
-- start copying these apps script (gs) files in this project
+- start copying these apps script (gs) files in this repo
 	- e.g. it might look like [this](media/02.png)
 - change the constants in constants.gs
 	- now that you have copied the Appsheet app, you will need to dig up a few other Drive ID's and insert them here.
@@ -38,4 +38,5 @@ The result is an app on your phone. When you add a new image to the app, it trig
 - add a trigger and set it to "main" and "on-change"
 	- e.g. it will look like [this](media/03.png)
 - when you save the trigger, you will need to verify various google oAuth scopes
+- open app in AppSheet, navigate to Automation > Tasks > Vision AI Alert_notify. Update the 'DeepLink' formula with the app ID of your copy. You can grab the app ID from the url. 
 - now TEST by using the Appsheet app :)
