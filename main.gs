@@ -30,9 +30,6 @@ try {
   var theFileID =               getFileByName(localFileName);
   var driveImage =              DriveApp.getFileById(theFileID.id).getBlob();
 
-  var DriveImageWidth =         getSize(driveImage).width;
-  var DriveImageHeight =        getSize(driveImage).height;
-
   var encoded =                 Utilities.base64Encode(driveImage.getBytes());
   
   for (var ai in ai_type) {
@@ -48,8 +45,6 @@ try {
       ai_final_response += '\n\n';
   }
   theSheet.getRange(theActiveRow,columnMap["Dictionary"]).setValue(ai_final_response);
-  theSheet.getRange(theActiveRow,columnMap["Width"]).setValue(DriveImageWidth);
-  theSheet.getRange(theActiveRow,columnMap["Height"]).setValue(DriveImageHeight);
 
   // now let's tell appsheet that we are done by adding a new record to our Alerts table
   // this will trigger an Appsheet workflow and notify the end user.
