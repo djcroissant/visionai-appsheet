@@ -8,7 +8,9 @@ var requiredColumns = [
   'Description',	
   'Image',	
   'Dictionary',	
-  'AINoun'
+  'AINoun',
+  'Width',
+  'Height'
   ];
 
 var columnMap = {};
