@@ -28,15 +28,12 @@ The result is an app on your phone. When you add a new image to the app, it trig
 - for this app, [enable the Appsheet rest api](https://help.appsheet.com/en/articles/1979976-enabling-the-api)
 	- note the App ID
 	- note the Api Key
-- open the Google sheet called Inventory
-- add an apps script from the Tools menu
-- start copying these apps script (gs) files in this repo
+- Create an Apps Script project
+- Copy the apps script (gs) files from this repo into your new Apps Script project
 	- e.g. it might look like [this](media/02.png)
 - change the constants in constants.gs
 	- now that you have copied the Appsheet app, you will need to dig up a few other Drive ID's and insert them here.
 - save your work
-- add a trigger and set it to "main" and "on-change"
+- update the 'Call Apps Script' task to use your ne Apps Script Project
 	- e.g. it will look like [this](media/03.png)
-- when you save the trigger, you will need to verify various google oAuth scopes
-- open app in AppSheet, navigate to Automation > Tasks > Vision AI Alert_notify. Update the 'DeepLink' formula with the app ID of your copy. You can grab the app ID from the url. 
 - now TEST by using the Appsheet app :)
