@@ -1,5 +1,5 @@
 // our api key from Google Vision GCP Project
-var visionApiKey               = 'AIzaSyCYDs7I35TnNbhgKEtYCK6YJuroFnTBYnw';
+var visionApiKey               = 'your_api_key_here';
 
 
 // the DriveID of the sheet named Attributes
@@ -20,8 +20,8 @@ var imagefolder                = DriveApp.getFolderById('1XGfPq4P-wKMsym-eD-UDYk
 
 // this solution requires the Appsheet Rest API, you need the API Key and App ID
 // https://help.appsheet.com/en/articles/1979976-enabling-the-api
-var appsheetApiKey             = 'V2-USm4G-oP6m2-cxNZi-oroTI-14IUK-2xPur-ttWQw-mIa82';
-var appsheetAppID              = 'e5c5e7b2-adaf-4fa9-a64c-22e802a2437c';
+var appsheetApiKey             = 'your_api_key_here';
+var appsheetAppID              = 'your_app_id_here';
 
 
 // you should not have to change anything below this line
