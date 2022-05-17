@@ -2,23 +2,7 @@
 // this simply adds a record to a sheet called Alerts
 // which will thus trigger an Appsheet notification
 
-function buildPost(rowkey, createdby) {
-
-  var postparentbody = 
-      {
-        "Action": "Add",
-        "Properties": {
-          "Locale": "en-US",
-          "Location": "47.623098, -122.330184",
-          "Timezone": "Pacific Standard Time",
-          "RunAsUserEmail": "alevizostestharness@gmail.com"
-        },
-        "Rows": [      {
-         "InventoryID": rowkey,
-         "createdby": createdby
-      }]
-      };
-  
+function buildPost(postBody) {
   var postParentOptions = 
       {
         "method" : "POST",
@@ -26,8 +10,50 @@ function buildPost(rowkey, createdby) {
           "applicationAccessKey" : appsheetApiKey,
           "Content-Type" : "application/json"
         },
-        "payload" : JSON.stringify(postparentbody)
+        "payload" : JSON.stringify(postBody)
       };
   
   return postParentOptions;
 }
+
+function buildAlertsPost(rowkey, createdby) {
+  var postAlertsBody = 
+      {
+        "Action": "Add",
+        "Properties": {
+          "Locale": "en-US",
+          "Location": "47.623098, -122.330184",
+          "Timezone": "Pacific Standard Time",
+          "RunAsUserEmail": "derekco@google.com"
+        },
+        "Rows": [      {
+         "InventoryID": rowkey,
+         "createdby": createdby
+        }]
+      };
+  
+  return buildPost(postAlertsBody);
+}
+
+function buildInventoryPost(rowkey, ai_final_response, DriveImageWidth, DriveImageHeight) {
+  var postInventoryBody = 
+      {
+        "Action": "Edit",
+        "Properties": {
+          "Locale": "en-US",
+          "Location": "47.623098, -122.330184",
+          "Timezone": "Pacific Standard Time",
+          "RunAsUserEmail": "derekco@google.com"
+        },
+        "Rows": [      {
+         "Key": rowkey,
+         "Status": "Analysis complete",
+         "Dictionary": ai_final_response,
+         "Width": DriveImageWidth,
+         "Height": DriveImageHeight
+        }]
+      };
+  
+  return buildPost(postInventoryBody);
+}
+
