@@ -30,19 +30,28 @@ function main(rowkey, createdby, theImagevalue, ai_type) {
         ai_final_response += '\n\n';
     }
 
-    var postInventoryURL = "https://api.appsheet.com/api/v2/apps/" 
-    + appsheetAppID + "/tables/Inventory/Action";
+    // NOTE: the call to AppSheet's REST API is no longer required. The return
+    // value is processed directly in AppSheet. Keeping this here as an example
+    // of an alternative implementation.
+    // var postInventoryURL = "https://api.appsheet.com/api/v2/apps/" 
+    // + appsheetAppID + "/tables/Inventory/Action";
 
-    var postAlertsURL = "https://api.appsheet.com/api/v2/apps/" 
-    + appsheetAppID + "/tables/Alerts/Action";
+    // var postAlertsURL = "https://api.appsheet.com/api/v2/apps/" 
+    // + appsheetAppID + "/tables/Alerts/Action";
 
-    // Send results from VisionAI back to the Inventory table
-    postInventory = UrlFetchApp.fetch(postInventoryURL, 
-    buildInventoryPost(rowkey, ai_final_response, DriveImageWidth, DriveImageHeight));
+    // // Send results from VisionAI back to the Inventory table
+    // postInventory = UrlFetchApp.fetch(postInventoryURL, 
+    // buildInventoryPost(rowkey, ai_final_response, DriveImageWidth, DriveImageHeight));
 
-    // Trigger an alert by posting to the Alerts table
-    // Desctivated - new version is syncronous!
-    // postAlerts = UrlFetchApp.fetch(postAlertsURL, buildAlertsPost(rowkey, createdby));
+    // Return results to AppSheet
+    var return_object = {
+      "Key": rowkey,
+      "Status": "Analysis complete",
+      "Dictionary": ai_final_response,
+      "Width": DriveImageWidth,
+      "Height": DriveImageHeight
+    }
+    return return_object;
 
 } catch (e) {
   Logger.log(e);
