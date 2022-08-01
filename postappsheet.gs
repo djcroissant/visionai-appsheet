@@ -1,6 +1,6 @@
 // construct a full rest api post to Appsheet
-// this simply adds a record to a sheet called Alerts
-// which will thus trigger an Appsheet notification
+// NOTE: This .gs file is no longer used. The return value is processed 
+// directly in AppSheet. Keeping this as an example of an alternative method
 
 function buildPost(postBody) {
   var postParentOptions = 
